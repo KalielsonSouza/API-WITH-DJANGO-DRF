@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>GEO BIT</title>
+</head>
+
+<body class="d-flex h-50 text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+          <div class="div">
+                <h1>IMPORT DATA</h1>
+          </div>
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <div class="mb-3" id="divInput">
+            <div class="container" id="containerTextBox">
+                <div id="infoInput">
+                    {% block content %}
+                    <form  action="" method="POST" class="pure-form pure-form-stacked" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{form}}
+                        <input type="file" name="myfile" class="form-control" id="cityInput"/>
+                        <button type="submit" class="btn btn-success" id="btnSubmitCity" data-toggle="tooltip" data-placement="bottom" title="Lembre-se de verificar se tá tudo certo!" onclick="">importar</button>
+                        {% endblock content %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
